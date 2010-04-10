@@ -1,3 +1,20 @@
+version 0.001; 2010-04-10
+
+  * revise statement about deprecation of the modules, to be more complete
+    and accurate and to reflect the latest nuances to their status
+
+  * in documentation, list the bundled libraries, with very short
+    descriptions
+
+  * add tests for several of the libraries based on the core's tests for
+    more modern replacements: abbrev.pl from Text::Abbrev, getopt.pl
+    and getopts.pl from Getopt::Std, hostname.pl from Sys::Hostname,
+    open2.pl from IPC::Open2, open3.pl from IPC::Open3, shellwords.pl
+    from Text::ParseWords, timelocal.pl from Time::Local
+
+  * in titular version-number-supplying module, check for required Perl
+    version at runtime
+
 version 0.000; 2010-03-30
 
   * initial released version

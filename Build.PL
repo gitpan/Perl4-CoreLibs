@@ -6,20 +6,23 @@ use Module::Build;
 
 my $build = Module::Build->new(
 	module_name => "Perl4::CoreLibs",
-	dist_version => "0.000",
 	license => "perl",
 	dist_author => [
 		"Brandon S. Allbery",
 		"John Bazik",
 		"Tom Christiansen <tchrist\@convex.com>",
+		"Alexandr Ciornii (alexchorny at gmail.com)",
 		"Charles Collins",
 		"Joe Doupnik <JRD\@CC.USU.EDU>",
 		"Marion Hakanson <hakanson\@cse.ogi.edu>",
+		"Marc Horowitz <marc\@mit.edu>",
 		"Waldemar Kebsch <kebsch.pad\@nixpbe.UUCP>",
 		"Lee McLoughlin <lmjm\@doc.ic.ac.uk>",
 		"<A.Macpherson\@bnr.co.uk>",
+		"Dave Rolsky <autarch\@urth.org>",
 		"Randal L. Schwartz <merlyn\@stonehenge.com>",
 		"Aaron Sherman <asherman\@fmrco.com>",
+		"David Sundstrom <sunds\@asictest.sc.ti.com>",
 		"Wayne Thompson",
 		"Larry Wall <lwall\@jpl-devvax.jpl.nasa.gov>",
 		"Ilya Zakharevich",
@@ -30,6 +33,8 @@ my $build = Module::Build->new(
 		"perl" => "5.006",
 	},
 	build_requires => {
+		"Config" => 0,
+		"IO::Handle" => 0,
 		"Module::Build" => 0,
 		"Test::More" => 0,
 		"perl" => "5.006",

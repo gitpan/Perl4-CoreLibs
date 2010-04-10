@@ -39,9 +39,17 @@ lib/tainted.pl
 lib/termcap.pl
 lib/timelocal.pl
 lib/validate.pl
+t/abbrev.t
 t/bigfloat.t
 t/bigint.t
+t/getopt.t
+t/getopts.t
+t/hostname.t
 t/newgetopt.t
+t/open2.t
+t/open3.t
 t/pod_cvg.t
 t/pod_syn.t
+t/shellwords.t
+t/timelocal.t
 SIGNATURE    Added here by Module::Build

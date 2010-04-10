@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.61.
+signed via the Module::Signature module, version 0.63.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -15,13 +15,13 @@ not run its Makefile.PL or Build.PL.
 Hash: SHA1
 
 SHA1 d09f62f9c109895ad15fb3b482fa2afb6e72e28a .cvsignore
-SHA1 2d8dfd65cc33b9805dd99d74e83a0362def78628 Build.PL
-SHA1 779cd197832de5cb49db6ce74a66bb2ecc918bf3 Changes
-SHA1 b3097dd21e06ef2c6d864dbaa879efc575474d8e MANIFEST
-SHA1 c8b437a138a523a4bb80fcbf1bf259834f0a72da META.yml
-SHA1 f8469f20cf26bafaffabb905631b945ab0f81289 Makefile.PL
-SHA1 043c0c8e6d192f39f3e9544d5810724b0b1a6ef5 README
-SHA1 f1784eb5bfed17d6d25ac4af33525cdadf41e2a2 lib/Perl4/CoreLibs.pm
+SHA1 43be77e6dc11edf5f9246d34207aeed37bdba9d0 Build.PL
+SHA1 1ab0d79e7a1a901317482a803bfdf64fa652f8aa Changes
+SHA1 f5ef5f44a756a2d10cfa09b416c89dfa8ac1f85c MANIFEST
+SHA1 be0b77e284c6280232eede719225413eefa1ee82 META.yml
+SHA1 caae608231ffe78390c76451ade51a7cfc87a9f9 Makefile.PL
+SHA1 58278dc9538f1c0b53f8c67b001a133903bf9f9e README
+SHA1 bdc7537ed5ce70a4bccc5d481cc7b3be5f60d6bb lib/Perl4/CoreLibs.pm
 SHA1 26b73eea112ed4f1a67b04bc8ba149c45bd9ebfa lib/abbrev.pl
 SHA1 60d7c32817fb8f015da9dccf501784b1f339dc3d lib/assert.pl
 SHA1 dee19029e03afcaad413e1dd619e0afbc74fb123 lib/bigfloat.pl
@@ -55,15 +55,23 @@ SHA1 eb33cfea8616e3cdf65c22536080651daca2b392 lib/tainted.pl
 SHA1 13fae38b5aa778f9959dd4c9d8f84ba06ad2d889 lib/termcap.pl
 SHA1 66d26c4a6ed5d4da8a5a8775ab9d54510b072d30 lib/timelocal.pl
 SHA1 5d843e4eb829903350356374cb518e8677700c8e lib/validate.pl
+SHA1 65d43e7d916e5bf81bc934a912c68bab53e74025 t/abbrev.t
 SHA1 3d6895f9840f0f83a40612d2bc79c0bfaca81a56 t/bigfloat.t
 SHA1 ee5d5fd18bdc2ddee64ecd067ce77460ed7b6e7c t/bigint.t
+SHA1 8c4c3180cbed4c96d8e79bf8b62158b96202d0d3 t/getopt.t
+SHA1 8634bee98c9ffb414162fff0930a43fbb72f0445 t/getopts.t
+SHA1 553be820a242caae615ced4430c2ed726796b539 t/hostname.t
 SHA1 aee611efcb72590d10ce68f7fba67dec90cb0434 t/newgetopt.t
+SHA1 4e167ca20f1a02b86d85925b0704d591fb546add t/open2.t
+SHA1 385bbf2022cb1dca675c04c34e050aeed1427d1e t/open3.t
 SHA1 0e141eecf3ca4903ef38d9413b5403a9ddb0392f t/pod_cvg.t
 SHA1 74a957cd8b93f25672ecc6aa578a671d084dd343 t/pod_syn.t
+SHA1 ab0b3238bccfad334638f01a905c5e8bb252f807 t/shellwords.t
+SHA1 3322589966090e987399ced32abcbe334c134c55 t/timelocal.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAkuygrsACgkQOV9mt2VyAVHbxACgqI/s5K8s3LhWwQQ8rsm8M2EF
-Sh8AmgPEaolzOssTtnQEUgdGGRPb8hO8
-=6sqr
+iEYEARECAAYFAkvA038ACgkQOV9mt2VyAVHbBgCggEFdJLJw+EDsk1v3lQnPQu9E
+xFsAn1tKBGWyb3LLYk1IAxCYaLEmool2
+=6vCq
 -----END PGP SIGNATURE-----
