@@ -1,20 +1,30 @@
-no strict;
+use warnings;
+use strict;
 
-require "newgetopt.pl";
+use Test::More tests => 11;
 
-print "1..9\n";
+require_ok "newgetopt.pl";
+
+our($opt_foo, $opt_Foo, $opt_bar, $opt_baR);
 
 @ARGV = qw(-Foo -baR --foo bar);
 $newgetopt::ignorecase = 0;
 $newgetopt::ignorecase = 0;
 undef $opt_baR;
 undef $opt_bar;
-print "ok 1\n" if NGetOpt ("foo", "Foo=s");
-print ((defined $opt_foo)   ? "" : "not ", "ok 2\n");
-print (($opt_foo == 1)      ? "" : "not ", "ok 3\n");
-print ((defined $opt_Foo)   ? "" : "not ", "ok 4\n");
-print (($opt_Foo eq "-baR") ? "" : "not ", "ok 5\n");
-print ((@ARGV == 1)         ? "" : "not ", "ok 6\n");
-print (($ARGV[0] eq "bar")  ? "" : "not ", "ok 7\n");
-print (!(defined $opt_baR)  ? "" : "not ", "ok 8\n");
-print (!(defined $opt_bar)  ? "" : "not ", "ok 9\n");
+ok NGetOpt("foo", "Foo=s");
+is $opt_foo, 1;
+is $opt_Foo, "-baR";
+is_deeply \@ARGV, [ "bar" ];
+ok !defined($opt_baR);
+ok !defined($opt_bar);
+
+@ARGV = qw(--foo -- --bar j);
+undef $opt_foo;
+undef $opt_bar;
+ok NGetOpt("foo", "bar");
+is_deeply \@ARGV, [qw(--bar j)];
+is $opt_foo, 1;
+ok !defined($opt_bar);
+
+1;

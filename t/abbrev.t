@@ -1,29 +1,35 @@
 use warnings;
 use strict;
 
-require "abbrev.pl";
+use Test::More tests => 2;
 
-print "1..3\n";
+require_ok "abbrev.pl";
 
 our %x;
 my @z = qw(list edit send abort gripe listen);
 &abbrev(*x, @z);
-my $r = join ':', sort keys %x; 
-print "not " if exists $x{'l'}   ||
-                exists $x{'li'}  ||
-                exists $x{'lis'};
-print "ok 1\n";
-
-print "not " unless $x{'list'}   eq 'list' &&
-                    $x{'liste'}  eq 'listen' &&
-                    $x{'listen'} eq 'listen';
-print "ok 2\n";
-
-print "not " unless $x{'a'}     eq 'abort' &&
-                    $x{'ab'}    eq 'abort' &&
-                    $x{'abo'}   eq 'abort' &&
-                    $x{'abor'}  eq 'abort' &&
-                    $x{'abort'} eq 'abort';
-print "ok 3\n";
+is_deeply \%x, {
+	a => "abort",
+	ab => "abort",
+	abo => "abort",
+	abor => "abort",
+	abort => "abort",
+	e => "edit",
+	ed => "edit",
+	edi => "edit",
+	edit => "edit",
+	g => "gripe",
+	gr => "gripe",
+	gri => "gripe",
+	grip => "gripe",
+	gripe => "gripe",
+	list => "list",
+	liste => "listen",
+	listen => "listen",
+	s => "send",
+	se => "send",
+	sen => "send",
+	send => "send",
+};
 
 1;

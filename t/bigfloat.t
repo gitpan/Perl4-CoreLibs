@@ -1,29 +1,30 @@
-BEGIN { $^W = 0; }
+use warnings;
+use strict;
 
-require "bigfloat.pl";
+use Test::More tests => 356;
 
-$test = 0;
-$| = 1;
-print "1..355\n";
+$^W = 0;
+require_ok "bigfloat.pl";
+
+my $f;
 while (<DATA>) {
-	chop;
+	chomp;
 	if (/^&/) {
 		$f = $_;
 	} elsif (/^\$.*/) {
 		eval "$_;";
 	} else {
-		++$test;
-		@args = split(/:/,$_,99);
-		$ans = pop(@args);
-		$try = "$f('" . join("','", @args) . "');";
-		if (($ans1 = eval($try)) eq $ans) {
-			print "ok $test\n";
-		} else {
-			print "not ok $test\n";
-			print "# '$try' expected: '$ans' got: '$ans1'\n";
-		}
+		my @args = split(/:/,$_,-1);
+		my $ans = pop(@args);
+		my $try = "$f('" . join("','", @args) . "');";
+		my $got = eval($try);
+		$got = "" if !defined($got);
+		is $got, $ans;
 	}
-} 
+}
+
+1;
+
 __END__
 &fnorm
 abc:NaN

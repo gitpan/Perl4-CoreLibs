@@ -1,36 +1,42 @@
 use warnings;
 use strict;
 
-use Test::More tests => 10;
+use Test::More tests => 15;
 
-require "getopts.pl";
+require_ok "getopts.pl";
 
 our($opt_f, $opt_h, $opt_i, $opt_k, $opt_o);
 
 $opt_o = $opt_i = $opt_f = undef;
 @ARGV = qw(-foi -i file);
-
-ok( &Getopts('oif:'),		'Getopts succeeded (1)' );
-is( "@ARGV", 'file',		'options removed from @ARGV (3)' );
-ok( $opt_i && $opt_f eq 'oi',	'options -i and -f correctly set' );
-ok( !defined $opt_o,		'option -o not set' );
+ok &Getopts("oif:"), "Getopts succeeded (1)";
+is_deeply \@ARGV, [qw(file)], "options removed from \@ARGV (1)";
+ok $opt_i, "option -i set";
+is $opt_f, "oi", "option -f set correctly";
+ok !defined($opt_o), "option -o not set";
 
 $opt_h = $opt_i = $opt_k = undef;
 @ARGV = qw(-hij -k p -- -l m);
-
-ok( &Getopts('hi:kl'),		'Getopts succeeded (2)' );
-is( "@ARGV", 'p -- -l m',	'options removed from @ARGV (4)' );
-ok( $opt_h && $opt_k,		'options -h and -k set' );
-is( $opt_i, 'j',		q/option -i is 'j'/ );
+ok &Getopts("hi:kl"), "Getopts succeeded (2)";
+is_deeply \@ARGV, [qw(p -- -l m)], "options removed from \@ARGV (2)";
+ok $opt_h, "option -h set";
+ok $opt_k, "option -k set";
+is $opt_i, "j", "option -i set correctly";
 
 SKIP: {
-	skip "can't capture stderr", 2 unless "$]" >= 5.008;
-	my $warning;
+	skip "can't capture stderr", 4 unless "$]" >= 5.008;
+	my $warning = "";
 	close(STDERR);
 	open(STDERR, ">", \$warning);
 	@ARGV = qw(-h help);
-	ok( !Getopts("xf:y"),		'Getopts fails for an illegal option' );
-	ok( $warning eq "Unknown option: h\n", 'user warned' );
+	ok !Getopts("xf:y"), "Getopts fails for an illegal option";
+	is $warning, "Unknown option: h\n", "user warned";
+	$warning = "";
+	close(STDERR);
+	open(STDERR, ">", \$warning);
+	@ARGV = qw(-h -- -i j);
+	ok !Getopts("hiy"), "Getopts fails for an illegal option";
+	is $warning, "Unknown option: -\n", "user warned";
 }
 
 1;

@@ -201,7 +201,7 @@ package Perl4::CoreLibs;
 use warnings;
 use strict;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 =head1 AUTHOR
 

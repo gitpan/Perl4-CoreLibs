@@ -1,3 +1,17 @@
+version 0.002; 2010-05-19
+
+  * remove all uses of $[, both reads and writes, from library code,
+    where it has been obsolete since perl 5.000
+
+  * for option parsing libraries, test behaviour with "--" argument
+
+  * in t/shellwords.t, remove unnecessary timeout that caused false
+    test failures
+
+  * in test suite, consistently use strictures and Test::More
+
+  * revise test code style
+
 version 0.001; 2010-04-10
 
   * revise statement about deprecation of the modules, to be more complete

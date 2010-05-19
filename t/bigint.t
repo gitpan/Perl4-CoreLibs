@@ -1,27 +1,28 @@
-BEGIN { $^W = 0; }
+use warnings;
+use strict;
 
-require "bigint.pl";
+use Test::More tests => 247;
 
-$test = 0;
-$| = 1;
-print "1..246\n";
+$^W = 0;
+require_ok "bigint.pl";
+
+my $f;
 while (<DATA>) {
-	chop;
+	chomp;
 	if (/^&/) {
 		$f = $_;
 	} else {
-		++$test;
-		@args = split(/:/,$_,99);
-		$ans = pop(@args);
-		$try = "$f('" . join("','", @args) . "');";
-		if (($ans1 = eval($try)) eq $ans) {
-			print "ok $test\n";
-		} else {
-			print "not ok $test\n";
-			print "# '$try' expected: '$ans' got: '$ans1'\n";
-		}
+		my @args = split(/:/,$_,99);
+		my $ans = pop(@args);
+		my $try = "$f('" . join("','", @args) . "');";
+		my $got = eval($try);
+		$got = "" if !defined($got);
+		is $got, $ans;
 	}
-} 
+}
+
+1;
+
 __END__
 &bnorm
 abc:NaN

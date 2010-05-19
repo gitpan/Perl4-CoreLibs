@@ -3,22 +3,25 @@ use strict;
 
 use Config;
 BEGIN {
-    require Test::More;
-    if (!$Config{'d_fork'}
-       # open2/3 supported on win32 (but not Borland due to CRT bugs)
-       && (($^O ne 'MSWin32' && $^O ne 'NetWare') || $Config{'cc'} =~ /^bcc/i))
-    {
-	Test::More->import(skip_all => 'open2/3 not available with MSWin32+Netware+cc=bcc');
-	exit 0;
-    }
-    # make warnings fatal
-    $SIG{__WARN__} = sub { die @_ };
+	# open2/3 supported on win32, but not Borland due to CRT bugs
+	if(!$Config{d_fork} &&
+			(($^O ne 'MSWin32' && $^O ne 'NetWare') ||
+			 $Config{cc} =~ /^bcc/i)) {
+		require Test::More;
+		Test::More->import(skip_all =>
+			"open2/3 not available with MSWin32+Netware+cc=bcc");
+	}
+}
+
+BEGIN {
+	# make warnings fatal
+	$SIG{__WARN__} = sub { die @_ };
 }
 
 use IO::Handle;
-use Test::More tests => 7;
+use Test::More tests => 8;
 
-require "open2.pl";
+require_ok "open2.pl";
 
 my $perl = $^X;
 
@@ -35,12 +38,14 @@ my ($pid, $reaped_pid);
 STDOUT->autoflush;
 STDERR->autoflush;
 
-ok($pid = &open2('READ', 'WRITE', $perl, '-e',
-	cmd_line('print scalar <STDIN>')));
-ok(print WRITE "hi kid\n");
-ok(<READ> =~ /^hi kid\r?\n$/);
-ok(close(WRITE), "closing WRITE: $!");
-ok(close(READ), "closing READ: $!");
+$pid = &open2('READ', 'WRITE', $^X, '-e', cmd_line('print scalar <STDIN>'));
+ok $pid;
+ok print(WRITE "hi kid\n");
+like scalar(<READ>), qr/\Ahi kid\r?\n\z/;
+ok close(WRITE);
+ok close(READ);
 $reaped_pid = waitpid $pid, 0;
-ok($reaped_pid == $pid, "Reaped PID: $reaped_pid");
-ok($? == 0, "\$? should be zero ($?)");
+is $reaped_pid, $pid;
+is $?, 0;
+
+1;

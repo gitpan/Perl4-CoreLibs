@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.63.
+signed via the Module::Signature module, version 0.64.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -16,21 +16,21 @@ Hash: SHA1
 
 SHA1 d09f62f9c109895ad15fb3b482fa2afb6e72e28a .cvsignore
 SHA1 43be77e6dc11edf5f9246d34207aeed37bdba9d0 Build.PL
-SHA1 1ab0d79e7a1a901317482a803bfdf64fa652f8aa Changes
+SHA1 7a4e91b161124d53a4ee54511985f20b502a9c6d Changes
 SHA1 f5ef5f44a756a2d10cfa09b416c89dfa8ac1f85c MANIFEST
-SHA1 be0b77e284c6280232eede719225413eefa1ee82 META.yml
+SHA1 8ded8ebf5cd7753f111498ce56a5a239ea0e86e2 META.yml
 SHA1 caae608231ffe78390c76451ade51a7cfc87a9f9 Makefile.PL
 SHA1 58278dc9538f1c0b53f8c67b001a133903bf9f9e README
-SHA1 bdc7537ed5ce70a4bccc5d481cc7b3be5f60d6bb lib/Perl4/CoreLibs.pm
-SHA1 26b73eea112ed4f1a67b04bc8ba149c45bd9ebfa lib/abbrev.pl
-SHA1 60d7c32817fb8f015da9dccf501784b1f339dc3d lib/assert.pl
-SHA1 dee19029e03afcaad413e1dd619e0afbc74fb123 lib/bigfloat.pl
-SHA1 2597061239e79710ba4168d3098fa25f1e743c99 lib/bigint.pl
-SHA1 0950cf436c041f73a9370cfffb3fe98f20c2a22a lib/bigrat.pl
+SHA1 9df5cfd0383690fa40126876b78519301790a2fc lib/Perl4/CoreLibs.pm
+SHA1 d34f3092d7fa015b1d79da59ba2ef6d1750c3235 lib/abbrev.pl
+SHA1 e7baaba3c82cb56da45e12cf10e020df80403b89 lib/assert.pl
+SHA1 e471939828ca3bcddc12e4642be4a2caffedf9f1 lib/bigfloat.pl
+SHA1 e37f3486d2f8332bc79827d95d59675af60659cf lib/bigint.pl
+SHA1 17bde82d2827efd5cd8109ea3fb4097b8c3c6acc lib/bigrat.pl
 SHA1 d3ca8191fd7393ef5030693de34508f29f09acac lib/cacheout.pl
 SHA1 ef9df026eaabadf4fdecbc6b098b104075eb116d lib/chat2.pl
 SHA1 657351c7a4568e8f90b48806d0f47609bdb07dac lib/complete.pl
-SHA1 3aa23ce72520c63d47314ee4a032fb2286279336 lib/ctime.pl
+SHA1 2f2a1ea2e975c4bf5c4555288c303def01cfccf3 lib/ctime.pl
 SHA1 a2f6ce5616df363b84e25cb2b836c510f66b8f25 lib/dotsh.pl
 SHA1 6b1b3535825fc6e15183b951d3d7eb1c76dedd7d lib/exceptions.pl
 SHA1 e47bb82e8c5ff31ac2ff5d949217188dfa211f5f lib/fastcwd.pl
@@ -38,9 +38,9 @@ SHA1 1dd888d493b32e37a8aed5cbba943b5a256547c8 lib/find.pl
 SHA1 d027422019db280d71a372621d9f5cf2a593c267 lib/finddepth.pl
 SHA1 05e69a428de4882694dc403651d42b5e09fbc17c lib/flush.pl
 SHA1 0f0037bd2b4becff2b03dda38f687f9a6c4efa0a lib/ftp.pl
-SHA1 53453cead7d1ca699acd944e07f8c59e7a00259a lib/getcwd.pl
-SHA1 c8043b8b48528994fd7e48666d9b68cb41fd18a8 lib/getopt.pl
-SHA1 fde5aba07542fdf628886e9f0819903f0bfdf754 lib/getopts.pl
+SHA1 f8f08a10b0674e6600d555707d3a92ddedd2679f lib/getcwd.pl
+SHA1 8282dc3ff054c7e0c35fdc0f8eda6ae867410e49 lib/getopt.pl
+SHA1 a562c6c5187a51fa4d8ff324b52fa1f5e5f4b7ac lib/getopts.pl
 SHA1 d819110dbdc1ccdefe67d6bf857564ce4f8bc01c lib/hostname.pl
 SHA1 bd8cfacf15c0f37a15c2d92bff595b6c0f287521 lib/importenv.pl
 SHA1 cb87ad59e87c53073ae0d76e07279d4b27c92900 lib/look.pl
@@ -49,29 +49,29 @@ SHA1 790620173473d02a94d5f71c961022b4d1a0305e lib/open2.pl
 SHA1 a91b4032acf3921f37c812ca4ee56aaee0f9b168 lib/open3.pl
 SHA1 b4471fd6239028bd94b3b941307b55509cfc1bc8 lib/pwd.pl
 SHA1 e5b277cb677d1d8bcc59de3dc0d0eaba4ed5a2b1 lib/shellwords.pl
-SHA1 e25c1a2833c89d2ef6568f85ee1d15c91d1106c4 lib/stat.pl
+SHA1 4c65b2e93e1f40e336fd53e4213ee9f63fd59b26 lib/stat.pl
 SHA1 7c2f990ba81f58c9e6525c2166407985b834e68d lib/syslog.pl
 SHA1 eb33cfea8616e3cdf65c22536080651daca2b392 lib/tainted.pl
-SHA1 13fae38b5aa778f9959dd4c9d8f84ba06ad2d889 lib/termcap.pl
+SHA1 17cbc392057ec8334b32c1448e003a0a96f3eaa0 lib/termcap.pl
 SHA1 66d26c4a6ed5d4da8a5a8775ab9d54510b072d30 lib/timelocal.pl
 SHA1 5d843e4eb829903350356374cb518e8677700c8e lib/validate.pl
-SHA1 65d43e7d916e5bf81bc934a912c68bab53e74025 t/abbrev.t
-SHA1 3d6895f9840f0f83a40612d2bc79c0bfaca81a56 t/bigfloat.t
-SHA1 ee5d5fd18bdc2ddee64ecd067ce77460ed7b6e7c t/bigint.t
-SHA1 8c4c3180cbed4c96d8e79bf8b62158b96202d0d3 t/getopt.t
-SHA1 8634bee98c9ffb414162fff0930a43fbb72f0445 t/getopts.t
-SHA1 553be820a242caae615ced4430c2ed726796b539 t/hostname.t
-SHA1 aee611efcb72590d10ce68f7fba67dec90cb0434 t/newgetopt.t
-SHA1 4e167ca20f1a02b86d85925b0704d591fb546add t/open2.t
-SHA1 385bbf2022cb1dca675c04c34e050aeed1427d1e t/open3.t
+SHA1 40f230ec0bb17dada0cf2be172939d2dacd2c99a t/abbrev.t
+SHA1 99ea24386425a5eb1c8344bb67aa68a6bb78161f t/bigfloat.t
+SHA1 26fbda818a5f5bbb207813132ad058dcbe88f251 t/bigint.t
+SHA1 e06652dc0380006d2840932048ee19d3606a2b21 t/getopt.t
+SHA1 93a46b0734c4f1d38eb5a5216686ff4545dead45 t/getopts.t
+SHA1 f0a534fd2d52bfc88152dee7c818e3f25e70703c t/hostname.t
+SHA1 3799e8dd6c2dab99863be5bd68fc17f593759e7f t/newgetopt.t
+SHA1 6fd35abd4558d8787f5bb979e106b654af624eac t/open2.t
+SHA1 8de9df6d39b090717ef7d5f2bae04e1bf46fb9be t/open3.t
 SHA1 0e141eecf3ca4903ef38d9413b5403a9ddb0392f t/pod_cvg.t
 SHA1 74a957cd8b93f25672ecc6aa578a671d084dd343 t/pod_syn.t
-SHA1 ab0b3238bccfad334638f01a905c5e8bb252f807 t/shellwords.t
-SHA1 3322589966090e987399ced32abcbe334c134c55 t/timelocal.t
+SHA1 089234273a73f10e3bf39d636f7dbd21fb413060 t/shellwords.t
+SHA1 4a3269c9d997504a12fc561088eff53d4cc61600 t/timelocal.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAkvA038ACgkQOV9mt2VyAVHbBgCggEFdJLJw+EDsk1v3lQnPQu9E
-xFsAn1tKBGWyb3LLYk1IAxCYaLEmool2
-=6vCq
+iEYEARECAAYFAkv0Q5wACgkQOV9mt2VyAVGMGwCeLBaRX3mrFEb9YUP5A/U/nSWA
+XeoAn0UdSvlBiCpd1YXV1y+xrLak+V7V
+=sQBc
 -----END PGP SIGNATURE-----
