@@ -1,3 +1,15 @@
+version 0.003; 2011-03-18
+
+  * bugfix: in shellwords.pl, require Text::ParseWords 3.25, because
+    earlier versions have a bug that causes an infinite loop on some
+    inputs
+
+  * use full stricture in test suite
+
+  * in Build.PL, complete declaration of configure-time requirements
+
+  * in Build.PL, declare appropriate version on Module::Build dependency
+
 version 0.002; 2010-05-19
 
   * remove all uses of $[, both reads and writes, from library code,

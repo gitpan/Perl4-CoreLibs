@@ -201,7 +201,7 @@ package Perl4::CoreLibs;
 use warnings;
 use strict;
 
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 =head1 AUTHOR
 
@@ -225,7 +225,7 @@ Andrew Main (Zefram) <zefram@fysh.org> built the Perl4::CoreLibs package.
 
 Copyright (C) 1987-2009 Larry Wall et al
 
-Copyright (C) 2010 Andrew Main (Zefram) <zefram@fysh.org>
+Copyright (C) 2010, 2011 Andrew Main (Zefram) <zefram@fysh.org>
 
 =head1 LICENSE
 

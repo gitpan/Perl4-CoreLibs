@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 
-use Module::Build;
+use Module::Build 0.26;
 
 my $build = Module::Build->new(
 	module_name => "Perl4::CoreLibs",
@@ -29,13 +29,15 @@ my $build = Module::Build->new(
 		"Andrew Main (Zefram) <zefram\@fysh.org>",
 	],
 	configure_requires => {
-		"Module::Build" => 0,
+		"Module::Build" => "0.26",
 		"perl" => "5.006",
+		"strict" => 0,
+		"warnings" => 0,
 	},
 	build_requires => {
 		"Config" => 0,
 		"IO::Handle" => 0,
-		"Module::Build" => 0,
+		"Module::Build" => "0.26",
 		"Test::More" => 0,
 		"perl" => "5.006",
 		"strict" => 0,
@@ -47,7 +49,7 @@ my $build = Module::Build->new(
 		"IPC::Open2" => 0,
 		"IPC::Open3" => 0,
 		"Socket" => 0,
-		"Text::ParseWords" => 0,
+		"Text::ParseWords" => "3.25",
 		"Time::Local" => 0,
 		"perl" => "5.006",
 		"strict" => 0,

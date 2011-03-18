@@ -8,7 +8,7 @@
 ;#	or
 ;#	@words = shellwords();		# defaults to $_ (and clobbers it)
 
-require Text::ParseWords;
+use Text::ParseWords 3.25 ();
 *shellwords = \&Text::ParseWords::old_shellwords;
 
 1;
